@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../../../../brand/design-system/styles.css" />
+<link rel="stylesheet" href="carousel-base.css" />
+<style>
+  .panel { gap: 26px; }
+  .step-label {
+    font-family: var(--ff-hand); font-size: var(--t-floor); color: var(--ink-60);
+    align-self: flex-start; margin-left: 12px;
+  }
+  .step-label.after { color: var(--accent); }
+  .typed {
+    font-family: var(--ff-body); font-size: 34px; color: var(--ink-60);
+    background: var(--card); border: 1px solid var(--ink-12);
+    padding: 26px 30px; width: 100%; text-align: center;
+  }
+  .shot { width: 100%; background: var(--card); border: 1px solid var(--ink-12); padding: 18px 0; }
+  .shot img { display: block; width: 92%; height: auto; margin: 0 auto; }
+  .down { font-size: 54px; color: var(--accent); line-height: 1; }
+</style>
+</head>
+<body>
+  <div class="brand-row">
+    <div class="brand"><img src="../../../../../brand/scriblit-logo.png" alt="" /><span>Scriblit</span></div>
+  </div>
+
+  <div class="display headline sm">Four fussy steps in Word. In Scriblit, <em>one click</em>.</div>
+
+  <div class="panel">
+    <div class="step-label">you type</div>
+    <div class="typed">illo &middot; moon tilting toward the house, curious</div>
+    <div class="down">&darr;</div>
+    <div class="step-label after">you get</div>
+    <div class="shot"><img src="ref-illo-note.png" alt="" /></div>
+  </div>
+
+  <div class="foot">
+    <div class="url">scriblitpb.com</div>
+    <div class="swipe">
+      <span class="cue">word count</span>
+      <svg class="hand-arrow" viewBox="0 0 72 28" width="86" height="34" fill="none">
+        <path d="M2,15 C18,9 34,18 50,13" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M40,5 C46,9 52,12 58,14 C52,15 46,18 41,23" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

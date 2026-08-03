@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../../../../brand/design-system/styles.css" />
+<link rel="stylesheet" href="carousel-base.css" />
+<style>
+  /* Absolute layout: the video is composited into the mat at a known pixel
+     offset, so every element's position must be deterministic. */
+  body { position: relative; padding: 0; display: block; }
+  .brand-row { position: absolute; top: 56px; left: 72px; }
+  .headline { position: absolute; top: 168px; left: 72px; width: 936px; margin: 0; }
+  /* Full-bleed mat; the clip is inset within it rather than run full width. */
+  .video-mat { position: absolute; top: 400px; left: 0; width: 1080px; height: 780px; background: var(--paper-2); }
+  .foot { position: absolute; top: 1232px; left: 72px; width: 936px; padding: 0; }
+</style>
+</head>
+<body>
+  <div class="brand-row">
+    <div class="brand"><img src="../../../../../brand/scriblit-logo.png" alt="" /><span>Scriblit</span></div>
+  </div>
+
+  <div class="display headline">Word thinks in pages. Scriblit in <em>spreads</em>.</div>
+
+  <div class="video-mat"></div>
+
+  <div class="foot">
+    <div class="url">scriblitpb.com</div>
+    <div class="swipe">
+      <span class="cue">illustration notes</span>
+      <svg class="hand-arrow" viewBox="0 0 72 28" width="86" height="34" fill="none">
+        <path d="M2,15 C18,9 34,18 50,13" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M40,5 C46,9 52,12 58,14 C52,15 46,18 41,23" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

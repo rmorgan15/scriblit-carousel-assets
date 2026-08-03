@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scriblit — Carousel Preview</title>
+<style>
+  body { margin: 0; padding: 32px 16px 80px; background: #2A2420; font-family: -apple-system, sans-serif; }
+  h1 { color: #F9F4EB; font-size: 18px; text-align: center; margin: 0 0 8px; }
+  .sub { color: rgba(249,244,235,.6); font-size: 13px; text-align: center; margin: 0 0 32px; }
+  .controls { display: flex; justify-content: center; gap: 10px; margin-bottom: 32px; }
+  .controls button {
+    font-family: monospace; font-size: 12px; padding: 8px 14px; border-radius: 999px;
+    border: 1px solid rgba(249,244,235,.3); background: transparent; color: #F9F4EB; cursor: pointer;
+  }
+  .controls button.is-active { background: #6B2FE3; border-color: #6B2FE3; }
+  .track { display: flex; gap: 24px; overflow-x: auto; padding: 0 16px 24px; scroll-snap-type: x mandatory; }
+  .card-wrap { flex-shrink: 0; scroll-snap-align: start; text-align: center; }
+  .card-wrap .label { color: rgba(249,244,235,.7); font-family: monospace; font-size: 11px; margin-bottom: 10px; letter-spacing: .08em; }
+  .frame {
+    border-radius: 36px; border: 10px solid #111; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  .frame img { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+  <h1>Scriblit &middot; Instagram carousel &middot; round 3</h1>
+  <p class="sub">Rendered at 390px CSS width, the size these appear on a phone.</p>
+  <div class="track" id="track"></div>
+
+  <script>
+    var cards = [
+      ["card-1-hook", "1 · Hook"],
+      ["card-2-spreads", "2 · Spreads"],
+      ["card-3-illo-notes", "3 · Illustration notes"],
+      ["card-4-word-count", "4 · Word count"],
+      ["card-5-export", "5 · Export"],
+      ["card-6-privacy-b-handdrawn", "6 · Privacy"],
+      ["card-7-cta", "7 · CTA"]
+    ];
+    var track = document.getElementById("track");
+    var currentW = 390;
+
+    function render() {
+      track.innerHTML = "";
+      cards.forEach(function (c) {
+        var wrap = document.createElement("div");
+        wrap.className = "card-wrap";
+        wrap.style.width = currentW + "px";
+        var label = document.createElement("div");
+        label.className = "label";
+        label.textContent = c[1];
+        var frame = document.createElement("div");
+        frame.className = "frame";
+        var img = document.createElement("img");
+        img.src = "phone-sizes/" + c[0] + "-" + currentW + "w.png";
+        frame.appendChild(img);
+        wrap.appendChild(label);
+        wrap.appendChild(frame);
+        track.appendChild(wrap);
+      });
+    }
+
+    render();
+  </script>
+</body>
+</html>
